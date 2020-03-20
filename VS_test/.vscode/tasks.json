@@ -1,0 +1,62 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                //"${fileDirname}/function.cpp",
+                "${workspaceFolder}/${fileBasenameNoExtension}.o",
+                "-I",
+                "/usr/local/include",
+                "-I",
+                "/usr/local/include/opencv",
+                "-I",
+                "/usr/local/include/opencv2",
+                "-L",
+                "/usr/local/lib",
+                "-l",
+                "opencv_core",
+                "-l",
+                "opencv_imgproc",
+                "-l",
+                "opencv_imgcodecs",
+                "-l",
+                "opencv_video",
+                "-l",
+                "opencv_ml",
+                "-l",
+                "opencv_highgui",
+                "-l",
+                "opencv_objdetect",
+                "-l",
+                "opencv_flann",
+                "-l",
+                "opencv_imgcodecs",
+                "-l",
+                "opencv_photo",
+                "-l",
+                "opencv_videoio"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0",
+    "presentation": { 
+        "echo": true, "reveal": "always", "focus": false, 
+        "panel": "new", //这里shared表示共享，改成new之后每个进程创建新的端口
+        "showReuseMessage": true, 
+        "clear": false 
+    }
+
+}
